@@ -73,6 +73,35 @@
             height: 260px;
             width: 100%;
         }
+
+        /* SVG Tech Circuitry Efectos */
+        .tech-circuit-path {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 60;
+            transition: stroke-dashoffset 0.8s cubic-bezier(0.1, 0.8, 0.3, 1), stroke 0.4s, opacity 0.4s;
+            opacity: 0.2;
+        }
+
+        .energy-surge .tech-circuit-path {
+            stroke-dashoffset: 0;
+            stroke: #0ea5e9;
+            /* Cyan Tech Glow */
+            opacity: 1;
+            filter: drop-shadow(0 0 8px #0ea5e9);
+        }
+
+        .tech-node {
+            fill: #111827;
+            stroke: #C49A45;
+            transition: all 0.5s;
+        }
+
+        .energy-surge .tech-node {
+            fill: #0ea5e9;
+            stroke: #0ea5e9;
+            filter: drop-shadow(0 0 10px #0ea5e9);
+            transform: scale(1.1);
+        }
     </style>
 </head>
 
@@ -114,10 +143,99 @@
                 Open Day <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-brand-guinda to-brand-oro italic text-6xl md:text-8xl p-1">2026.</span>
             </h1>
-            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light px-4">
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light px-4 mb-4">
                 <strong class="text-white font-bold">8 de Abril.</strong> Explora el núcleo de la innovación tecnológica
                 en la UNMSM. Hardware, software y visión industrial bajo estándares internacionales de gestión.
             </p>
+
+            <!-- Countdown Container with Intricate Tech Circuitry -->
+            <div class="mt-12 relative inline-flex items-center justify-center p-8 sm:p-12 bg-black/60 backdrop-blur-xl rounded-2xl border border-brand-oro/30 shadow-[0_0_40px_rgba(196,154,69,0.15)] group"
+                id="countdown-container">
+
+                <!-- Circuitry Elements (Inside & Out) -->
+                <div
+                    class="absolute inset-0 w-full h-full pointer-events-none rounded-2xl z-0 border border-brand-guinda/20 group-[.energy-surge]:border-[#0ea5e9]/50 transition-colors duration-700">
+                </div>
+
+                <!-- Floating Gears -->
+                <div
+                    class="absolute -top-6 -left-6 z-10 opacity-30 pointer-events-none text-brand-oro animate-[spin_15s_linear_infinite] drop-shadow-xl group-[.energy-surge]:text-brand-guinda transition-colors duration-500">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.06-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.73,8.87C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.06,0.94l-2.03,1.58c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.49-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" />
+                    </svg>
+                </div>
+                <div
+                    class="absolute -bottom-8 -right-8 z-10 opacity-20 pointer-events-none text-sky-400 animate-[spin_20s_linear_infinite_reverse] drop-shadow-xl group-[.energy-surge]:text-sky-300 transition-colors duration-500">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.06-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.73,8.87C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.06,0.94l-2.03,1.58c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.49-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" />
+                    </svg>
+                </div>
+
+                <!-- Expanded Static Glow Circuitry radiating from center -->
+                <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] pointer-events-none z-0"
+                    id="tech-circuits" xmlns="http://www.w3.org/2000/svg">
+                    <g class="tech-circuit" stroke="#C49A45" stroke-width="1.5" fill="none">
+                        <!-- Top Left -->
+                        <path class="tech-circuit-path" d="M 0,30 L 25,30 L 50,5 L 120,5" />
+                        <circle class="tech-node" cx="120" cy="5" r="3" />
+                        <rect class="tech-node" x="0" y="27" width="6" height="6" />
+
+                        <!-- Top Right -->
+                        <path class="tech-circuit-path" d="M 120%,20% L 90%,20% L 80%,40% L 70%,40%" />
+                        <circle class="tech-node" cx="70%" cy="40%" r="3" />
+                        <circle class="tech-node" cx="120%" cy="20%" r="3" />
+
+                        <!-- Bottom Left -->
+                        <path class="tech-circuit-path" d="M -10%,110% L 20%,110% L 30%,85% L 50%,85%" />
+                        <rect class="tech-node" x="50%" y="83%" width="6" height="6" />
+
+                        <!-- Right Bottom -->
+                        <path class="tech-circuit-path" d="M 110%,90% L 80%,90% L 70%,70% L 40%,70%" />
+                        <circle class="tech-node" cx="40%" cy="70%" r="3" />
+                    </g>
+                </svg>
+
+                <!-- Clock Elements -->
+                <div class="flex gap-4 sm:gap-8 z-20 font-mono relative">
+                    <div class="flex flex-col items-center">
+                        <span
+                            class="text-3xl sm:text-5xl font-black text-brand-oro drop-shadow-[0_0_10px_rgba(196,154,69,0.5)] group-[.energy-surge]:text-[#0ea5e9] group-[.energy-surge]:drop-shadow-[0_0_15px_#0ea5e9] transition-all duration-300"
+                            id="cd-days">00</span>
+                        <span
+                            class="text-[10px] sm:text-xs text-brand-muted uppercase tracking-widest mt-1 font-sans font-bold group-[.energy-surge]:text-white transition-colors duration-300">Días</span>
+                    </div>
+                    <span
+                        class="text-3xl sm:text-5xl font-black text-brand-guinda opacity-50 group-[.energy-surge]:opacity-100 group-[.energy-surge]:text-white transition-all duration-300">:</span>
+                    <div class="flex flex-col items-center">
+                        <span
+                            class="text-3xl sm:text-5xl font-black text-brand-oro drop-shadow-[0_0_10px_rgba(196,154,69,0.5)] group-[.energy-surge]:text-[#0ea5e9] group-[.energy-surge]:drop-shadow-[0_0_15px_#0ea5e9] transition-all duration-300"
+                            id="cd-hours">00</span>
+                        <span
+                            class="text-[10px] sm:text-xs text-brand-muted uppercase tracking-widest mt-1 font-sans font-bold group-[.energy-surge]:text-white transition-colors duration-300">Horas</span>
+                    </div>
+                    <span
+                        class="text-3xl sm:text-5xl font-black text-brand-guinda opacity-50 group-[.energy-surge]:opacity-100 group-[.energy-surge]:text-white transition-all duration-300">:</span>
+                    <div class="flex flex-col items-center">
+                        <span
+                            class="text-3xl sm:text-5xl font-black text-brand-oro drop-shadow-[0_0_10px_rgba(196,154,69,0.5)] group-[.energy-surge]:text-[#0ea5e9] group-[.energy-surge]:drop-shadow-[0_0_15px_#0ea5e9] transition-all duration-300"
+                            id="cd-mins">00</span>
+                        <span
+                            class="text-[10px] sm:text-xs text-brand-muted uppercase tracking-widest mt-1 font-sans font-bold group-[.energy-surge]:text-white transition-colors duration-300">Min</span>
+                    </div>
+                    <span
+                        class="text-3xl sm:text-5xl font-black text-brand-guinda opacity-50 group-[.energy-surge]:opacity-100 group-[.energy-surge]:text-white transition-all duration-300">:</span>
+                    <div class="flex flex-col items-center">
+                        <span
+                            class="text-3xl sm:text-5xl font-black text-brand-oro drop-shadow-[0_0_10px_rgba(196,154,69,0.5)] group-[.energy-surge]:text-[#0ea5e9] group-[.energy-surge]:drop-shadow-[0_0_15px_#0ea5e9] transition-all duration-300"
+                            id="cd-secs">00</span>
+                        <span
+                            class="text-[10px] sm:text-xs text-brand-muted uppercase tracking-widest mt-1 font-sans font-bold group-[.energy-surge]:text-white transition-colors duration-300">Seg</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </header>
 
@@ -238,11 +356,11 @@
                 block: 1,
                 name: "BLOQUE I: Ecosistema Estudiantil y Visión Industrial",
                 items: [
-                    { time: "13:00 - 13:20", title: "IEEE PES: Potencia y Energía", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo PES" },
-                    { time: "13:20 - 13:40", title: "IEEE RAS: Robótica y Automatización", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo RAS" },
-                    { time: "13:40 - 14:00", title: "IEEE EDS: Dispositivos Electrónicos", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo EDS" },
-                    { time: "14:00 - 14:20", title: "IEEE COMSOC: Comunicaciones", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo COMSOC" },
-                    { time: "14:20 - 14:40", title: "IEEE WIE: Women in Engineering", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo WIE" },
+                    { time: "13:00 - 13:20", title: "IEEE PES: Potencia y Energía", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo PES", desc: "Sistemas de energía.", fullDesc: "Desarrollo de innovaciones sostenibles para generación, transmisión y distribución de energía inteligente.", project: "Proyecto destacado: Microrred eólica experimental.", logo: "logo-pes.png" },
+                    { time: "13:20 - 13:40", title: "IEEE RAS: Robótica y Automatización", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo RAS", desc: "Robótica industrial.", fullDesc: "Investigación y aplicación de sistemas mecatrónicos autónomos e inteligencia artificial aplicada.", project: "Proyecto destacado: Robot cuadrúpedo de exploración.", logo: "logo-ras.jpeg" },
+                    { time: "13:40 - 14:00", title: "IEEE EDS: Dispositivos Electrónicos", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo EDS", desc: "Componentes avanzados.", fullDesc: "Diseño e implementación de semiconductores, microelectrónica y sensores de vanguardia.", project: "Proyecto destacado: Sensor biomédico no invasivo.", logo: "logo-eds.jpeg" },
+                    { time: "14:00 - 14:20", title: "IEEE COMSOC: Comunicaciones", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo COMSOC", desc: "Telecomunicaciones.", fullDesc: "Exploración de protocolos 5G/6G, IoT, redes inalámbricas y procesamiento de señales.", project: "Proyecto destacado: Red IoT para medición climática.", logo: "logo-comsoc.jpeg" },
+                    { time: "14:20 - 14:40", title: "IEEE WIE: Women in Engineering", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo WIE", desc: "Liderazgo femenino.", fullDesc: "Promoción y empoderamiento de mujeres en disciplinas STEM a través de mentoreo y tecnología.", project: "Proyecto destacado: STEM Girls App.", logo: "logo-wie.jpeg" },
                     { time: "14:40 - 15:00", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Jesús Salazar Nishi (Koplast)", desc: "Liderazgo en manufactura." },
                     { time: "15:00 - 15:20", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Piero Saravia (Minsur)", desc: "Innovación tecnológica minera." },
                     { time: "15:20 - 15:40", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Elena Rojas (AWS)", desc: "Arquitectura Cloud." }
@@ -253,7 +371,7 @@
                 name: "BLOQUE II: Innovación, Procesos e Integración Aplicada",
                 items: [
                     { time: "15:40 - 16:00", title: "ASME: Ingeniería Mecánica", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo ASME", desc: "Diseño de máquinas.", fullDesc: "Desarrollo de proyectos y habilidades en ingeniería mecánica con aplicación práctica.", project: "Proyecto destacado: Vehículo Rover todoterreno.", logo: "logo-asme.jpeg" },
-                    { time: "16:00 - 16:20", title: "AIChE: Ingeniería Química", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo AIChE", desc: "Procesos industriales.", fullDesc: "Diseño de procesos químicos sostenibles y experimentación aplicativa industrial.", project: "Proyecto destacado: Planta piloto de biocombustibles.", logo: "logo-aiche.jpeg" },
+                    { time: "16:00 - 16:20", title: "AIChE: Ingeniería Química", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo AIChE", desc: "Procesos industriales.", fullDesc: "Diseño de procesos químicos sostenibles y experimentación aplicativa industrial.", project: "Proyecto destacado: Planta piloto de biocombustibles.", logo: "logo-aiche.png" },
                     { time: "16:20 - 16:40", title: "MULTITRONICS: Integración", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Multitronics", desc: "Integración mecatrónica.", fullDesc: "Integración de sistemas electrónicos, control y mecánica para crear soluciones robóticas de alto nivel.", project: "Proyecto destacado: Brazo robótico automatizado.", logo: "logo-multitronics.jpeg" },
                     { time: "16:40 - 17:00", title: "ROBOTITOS: Robótica Competitiva", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Robotitos", desc: "Innovación y competitividad.", fullDesc: "Centro de entrenamiento y desarrollo enfocado en robótica competitiva y mecatrónica ágil.", project: "Proyecto destacado: Robot Minisumo autónomo.", logo: "logo-robotitos.jpeg" },
                     { time: "17:00 - 17:20", title: "INFORTEGRAF PERÚ: Soluciones IT", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Infortegraf", desc: "Desarrollo informático.", fullDesc: "Especialistas en desarrollo de software, modelado 3D, IA y soluciones tecnológicas para el campus.", project: "Proyecto destacado: Plataforma IoT para campus inteligente.", logo: "logo-infortegraf.jpeg" },
@@ -288,7 +406,13 @@
                     <div class="space-y-4">
                         ${filteredItems.map(item => `
                             <div class="schedule-card group bg-white p-5 rounded-xl border border-gray-100 flex flex-col md:flex-row gap-4 relative overflow-hidden transition-all duration-300">
-                                <div class="md:w-32 flex-shrink-0 font-mono text-sm font-bold ${item.type === 'masterclass' ? 'text-brand-oro' : 'text-brand-guinda'}">${item.time}</div>
+                                <div class="md:w-32 flex-shrink-0 font-mono text-sm font-bold ${item.type === 'masterclass' ? 'text-brand-oro' : 'text-brand-guinda'}">
+                                    ${item.time}
+                                    ${item.logo ? `
+                                    <div class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-32 group-hover:opacity-100 group-hover:mt-3">
+                                        <img src="${item.logo}" alt="Logo ${item.title}" class="w-[115px] max-w-full h-auto object-contain object-left drop-shadow-md transform scale-95 group-hover:scale-100 transition-transform duration-500 origin-left">
+                                    </div>` : ''}
+                                </div>
                                 <div class="flex-grow md:pr-24">
                                     <h4 class="font-bold text-gray-900 text-lg leading-tight mb-1">${item.title}</h4>
                                     <p class="text-sm text-gray-500 font-medium">${item.speaker} ${item.desc ? `<span class="opacity-75 font-normal">• ${item.desc}</span>` : ''}</p>
@@ -299,7 +423,6 @@
                                     <span class="text-[10px] font-black tracking-wider uppercase px-3 py-1.5 rounded-md border bg-white/80 backdrop-blur-sm ${badgeColorMap[item.type]}">
                                         ${item.typeLabel}
                                     </span>
-                                    ${item.logo ? `<img src="${item.logo}" alt="Logo ${item.title}" class="h-10 md:h-12 w-auto object-contain transform transition-all duration-500 origin-right filter grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 group-hover:scale-[1.3] drop-shadow-md">` : ''}
                                 </div>
                             </div>
                         `).join('')}
@@ -359,9 +482,33 @@
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
+        // Countdown & Circuit Animation Logic
+        function startCountdown() {
+            const countdownDate = new Date("2026-04-08T08:00:00").getTime();
+            const cdContainer = document.getElementById('countdown-container');
+
+            setInterval(() => {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                if (distance > 0) {
+                    document.getElementById('cd-days').innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                    document.getElementById('cd-hours').innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                    document.getElementById('cd-mins').innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                    document.getElementById('cd-secs').innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+                }
+
+                // Trigger energy surge effect
+                cdContainer.classList.remove('energy-surge');
+                void cdContainer.offsetWidth; // trigger reflow
+                cdContainer.classList.add('energy-surge');
+            }, 1000);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             render();
             initChart();
+            startCountdown();
             document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         });
     </script>
