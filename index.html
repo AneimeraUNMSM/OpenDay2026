@@ -217,6 +217,40 @@
             }
         }
 
+        @keyframes flipLogo1 {
+
+            0%,
+            45% {
+                opacity: 1;
+            }
+
+            50%,
+            95% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes flipLogo2 {
+
+            0%,
+            45% {
+                opacity: 0;
+            }
+
+            50%,
+            95% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
         .animate-trace-pulse {
             stroke-dasharray: 20 100;
             animation: tracePulse 1.5s linear forwards;
@@ -505,7 +539,7 @@
                 items: [
                     { time: "13:00 - 13:20", title: "IEEE PES: Potencia y Energía", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo PES", desc: "Sistemas de energía.", fullDesc: "Desarrollo de innovaciones sostenibles para generación, transmisión y distribución de energía inteligente.", project: "Proyecto destacado: Microrred eólica experimental.", logo: "logo-pes.png" },
                     { time: "13:20 - 13:40", title: "IEEE RAS: Robótica y Automatización", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo RAS", desc: "Robótica industrial.", fullDesc: "Investigación y aplicación de sistemas mecatrónicos autónomos e inteligencia artificial aplicada.", project: "Proyecto destacado: Robot cuadrúpedo de exploración.", logo: "logo-ras.jpeg" },
-                    { time: "13:40 - 14:00", title: "IEEE EDS: Dispositivos Electrónicos", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo EDS", desc: "Componentes avanzados.", fullDesc: "Diseño e implementación de semiconductores, microelectrónica y sensores de vanguardia.", project: "Proyecto destacado: Sensor biomédico no invasivo.", logo: "logo-eds.jpeg" },
+                    { time: "13:40 - 14:00", title: "IEEE EDS: Dispositivos Electrónicos", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo EDS", desc: "Componentes avanzados.", fullDesc: "Diseño e implementación de semiconductores, microelectrónica y sensores de vanguardia.", project: "Proyecto destacado: Sensor biomédico no invasivo.", logo: "logo-eds.png" },
                     { time: "14:00 - 14:20", title: "IEEE COMSOC: Comunicaciones", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo COMSOC", desc: "Telecomunicaciones.", fullDesc: "Exploración de protocolos 5G/6G, IoT, redes inalámbricas y procesamiento de señales.", project: "Proyecto destacado: Red IoT para medición climática.", logo: "logo-comsoc.jpeg" },
                     { time: "14:20 - 14:40", title: "IEEE WIE: Women in Engineering", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo WIE", desc: "Liderazgo femenino.", fullDesc: "Promoción y empoderamiento de mujeres en disciplinas STEM a través de mentoreo y tecnología.", project: "Proyecto destacado: STEM Girls App.", logo: "logo-wie.jpeg" },
                     { time: "14:40 - 15:00", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Jesús Salazar Nishi (Koplast)", desc: "Liderazgo en manufactura." },
@@ -520,8 +554,8 @@
                     { time: "15:40 - 16:00", title: "ASME: Ingeniería Mecánica", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo ASME", desc: "Diseño de máquinas.", fullDesc: "Desarrollo de proyectos y habilidades en ingeniería mecánica con aplicación práctica.", project: "Proyecto destacado: Vehículo Rover todoterreno.", logo: "logo-asme.jpeg" },
                     { time: "16:00 - 16:20", title: "AIChE: Ingeniería Química", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo AIChE", desc: "Procesos industriales.", fullDesc: "Diseño de procesos químicos sostenibles y experimentación aplicativa industrial.", project: "Proyecto destacado: Planta piloto de biocombustibles.", logo: "logo-aiche.png" },
                     { time: "16:20 - 16:40", title: "MULTITRONICS: Integración", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Multitronics", desc: "Integración mecatrónica.", fullDesc: "Integración de sistemas electrónicos, control y mecánica para crear soluciones robóticas de alto nivel.", project: "Proyecto destacado: Brazo robótico automatizado.", logo: "logo-multitronics.png" },
-                    { time: "16:40 - 17:00", title: "ROBOTITOS: Robótica Competitiva", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Robotitos", desc: "Innovación y competitividad.", fullDesc: "Centro de entrenamiento y desarrollo enfocado en robótica competitiva y mecatrónica ágil.", project: "Proyecto destacado: Robot Minisumo autónomo.", logo: "logo-robotitos.jpeg" },
-                    { time: "17:00 - 17:20", title: "INFORTEGRAF PERÚ: Soluciones IT", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Infortegraf", desc: "Desarrollo informático.", fullDesc: "Especialistas en desarrollo de software, modelado 3D, IA y soluciones tecnológicas para el campus.", project: "Proyecto destacado: Plataforma IoT para campus inteligente.", logo: "logo-infortegraf.jpeg" },
+                    { time: "16:40 - 17:00", title: "ROBOTITOS & INFORTEGRAF: Robótica y Soluciones IT", type: "agrupacion", typeLabel: "Agrupación Conjunta", speaker: "Equipos Robotitos e Infortegraf", desc: "Innovación mecatrónica e IT.", fullDesc: "Fusión de robótica competitiva, automatización ágil, desarrollo de software e inteligencia artificial para el ecosistema uniersitario.", project: "Proyecto destacado: Robot Autónomo IoT.", logo: "logo-robotitos.jpeg", logoHover: "logo-infortegraf.jpeg" },
+                    { time: "17:00 - 17:20", title: "Masterclass Biomédica", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Biomédico (Por confirmar)", desc: "Ingeniería aplicada a la salud." },
                     { time: "17:20 - 17:40", title: "Masterclass Ciberseguridad", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Carlos Mendoza (Fortinet)", desc: "Protección de infraestructuras críticas." },
                     { time: "17:40 - 18:00", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Valeria Torres (Siemens)", desc: "Gestión de proyectos tecnológicos." }
                 ]
@@ -600,8 +634,12 @@
                                 <div class="md:w-32 flex-shrink-0 font-mono text-sm font-bold ${item.type === 'masterclass' ? 'text-brand-oro' : 'text-brand-guinda'}">
                                     ${item.time}
                                     ${item.logo ? `
-                                    <div class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-32 group-hover:opacity-100 group-hover:mt-3">
-                                        <img src="${item.logo}" alt="Logo ${item.title}" class="w-[115px] max-w-full h-auto object-contain object-left drop-shadow-md transform scale-95 group-hover:scale-100 transition-transform duration-500 origin-left">
+                                    <div class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-32 group-hover:opacity-100 group-hover:mt-3 relative">
+                                        <!-- Dummy invisible image to maintain the organic aspect ratio & height -->
+                                        <img src="${item.logo}" alt="spacer" class="w-[115px] max-w-full h-auto object-contain invisible opacity-0" aria-hidden="true">
+                                        <!-- Foreground alternating logos -->
+                                        <img src="${item.logo}" alt="Logo ${item.title}" class="absolute top-0 left-0 w-[115px] max-w-full h-auto object-contain object-left drop-shadow-md transform scale-95 group-hover:scale-100 transition-transform duration-500 origin-left ${item.logoHover ? 'group-hover:animate-[flipLogo1_4s_infinite_linear]' : ''}">
+                                        ${item.logoHover ? `<img src="${item.logoHover}" alt="Logo Alternativo" class="absolute top-0 left-0 w-[115px] max-w-full h-auto object-contain object-left drop-shadow-md transform scale-95 group-hover:scale-100 transition-transform duration-500 origin-left opacity-0 group-hover:animate-[flipLogo2_4s_infinite_linear]">` : ''}
                                     </div>` : ''}
                                 </div>
                                 <div class="flex-grow md:pr-24">
@@ -720,8 +758,22 @@
             burstEl.className = 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#0284c7] pointer-events-none mix-blend-screen z-[-1]';
             // Set opacity to 0 at the end using an animation to fade out the static paths after the pulse is complete
             burstEl.style.animation = "fadeHold 2.5s forwards";
-            burstEl.innerHTML = `<svg width="800" height="800" viewBox="-400 -400 800 800" xmlns="http://www.w3.org/2000/svg">${elements.join('')}</svg>`;
-
+            burstEl.innerHTML = `
+            <svg width="800" height="800" viewBox="-400 -400 800 800" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="fadeGrad" cx="50%" cy="50%" r="50%">
+                        <stop offset="20%" stop-color="white" stop-opacity="1"/>
+                        <stop offset="50%" stop-color="white" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="white" stop-opacity="0"/>
+                    </radialGradient>
+                    <mask id="fadeMask">
+                        <rect x="-400" y="-400" width="800" height="800" fill="url(#fadeGrad)"/>
+                    </mask>
+                </defs>
+                <g mask="url(#fadeMask)">
+                    ${elements.join('')}
+                </g>
+            </svg>`;
             if (!document.getElementById('fade-hold-style')) {
                 const style = document.createElement('style');
                 style.id = 'fade-hold-style';
