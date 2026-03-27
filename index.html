@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Day ANEIMERA - UNMSM</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            guinda: '#7B1113',
+                            oro: '#C49A45',
+                            dark: '#111827',
+                            muted: '#6B7280',
+                            bg: '#FAFAFA'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+
+        .schedule-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid transparent;
+        }
+
+        .schedule-card:hover {
+            transform: translateX(8px);
+            border-left-color: #7B1113;
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 260px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-brand-bg text-brand-dark antialiased">
+
+    <!-- Navbar -->
+    <nav class="glass-nav sticky top-0 z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-4 sm:gap-6">
+                <!-- Logo UNMSM -->
+                <img src="logo-unmsm.png"
+                    alt="Logo UNMSM"
+                    class="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform duration-300">
+                
+                <!-- Separador -->
+                <div class="w-px h-8 bg-gray-300 hidden sm:block"></div>
+                
+                <!-- Logo ANEIMERA -->
+                <img src="logo-aneimera.png"
+                    alt="Logo ANEIMERA"
+                    class="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform duration-300">
+            </div>
+            <a href="#registro"
+                class="bg-brand-guinda text-white px-6 py-2 text-sm font-bold rounded hover:bg-black transition-all shadow-lg shadow-red-900/20">REGISTRO</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+        class="relative py-28 px-6 max-w-7xl mx-auto text-center overflow-hidden fade-in min-h-[60vh] flex flex-col justify-center items-center rounded-3xl mt-6 shadow-2xl w-[calc(100%-3rem)] bg-brand-dark mb-12">
+        <!-- Background Image of Campus -->
+        <div class="absolute inset-0 z-0 bg-brand-dark">
+            <img src="fondo-unmsm.png" alt="Campus UNMSM"
+                class="w-full h-full object-cover opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-brand-dark/40 to-brand-dark/90"></div>
+        </div>
+
+        <div class="relative z-10 w-full transform hover:scale-[1.01] transition-transform duration-700">
+            <span class="text-brand-oro font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-6 block">Evento
+                de Ingeniería de Élite</span>
+            <h1 class="text-5xl md:text-7xl font-black text-white leading-none mb-8 drop-shadow-2xl">
+                Open Day <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-brand-guinda to-brand-oro italic text-6xl md:text-8xl p-1">2026.</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light px-4">
+                <strong class="text-white font-bold">8 de Abril.</strong> Explora el núcleo de la innovación tecnológica
+                en la UNMSM. Hardware, software y visión industrial bajo estándares internacionales de gestión.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pb-24" id="cronograma">
+        <div class="flex flex-col lg:flex-row gap-12">
+
+            <!-- Left Column: Context (Sticky) -->
+            <div class="lg:w-1/3 space-y-8">
+                <div class="lg:sticky lg:top-24 space-y-6">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="relative flex h-3 w-3">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-oro opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-oro"></span>
+                                </span>
+                                <span class="text-xs font-bold tracking-widest text-brand-guinda uppercase">Exhibición
+                                    Continua</span>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-gray-400">13:00 - 18:00</span>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-4">Mini-Feria Aplicada</h2>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                            El hardware y software hablan por sí solos. Durante toda la jornada, visita los stands.
+                            Sistemas robóticos, ciberseguridad y despliegue en tiempo real. Los proyectos de ANEIMERA no
+                            te los contamos, los demostramos.
+                        </p>
+                        <div class="border-t border-gray-100 pt-6">
+                            <h3 class="text-xs font-bold text-brand-dark uppercase mb-4">Proporción de Actividades</h3>
+                            <div class="chart-container">
+                                <canvas id="compositionChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Agenda (Scroll) -->
+            <div class="lg:w-2/3">
+                <!-- Filter Header -->
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-8 flex flex-wrap items-center justify-between gap-4 sticky top-20 z-40">
+                    <span class="text-xs font-bold uppercase text-brand-muted ml-2">Filtrar Actividades:</span>
+                    <div class="flex flex-wrap gap-2" id="filter-container">
+                        <button data-filter="all"
+                            class="filter-btn px-4 py-2 rounded text-xs font-bold bg-brand-guinda text-white shadow-lg shadow-red-900/20">TODOS</button>
+                        <button data-filter="ieee"
+                            class="filter-btn px-4 py-2 rounded text-xs font-bold bg-gray-50 text-brand-muted hover:bg-gray-100 transition-all">CAPÍTULOS
+                            IEEE</button>
+                        <button data-filter="masterclass"
+                            class="filter-btn px-4 py-2 rounded text-xs font-bold bg-gray-50 text-brand-muted hover:bg-gray-100 transition-all">MASTERCLASSES</button>
+                        <button data-filter="agrupacion"
+                            class="filter-btn px-4 py-2 rounded text-xs font-bold bg-gray-50 text-brand-muted hover:bg-gray-100 transition-all">AGRUPACIONES</button>
+                    </div>
+                </div>
+
+                <!-- Schedule Blocks -->
+                <div id="schedule-render" class="space-y-12">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer / Registro -->
+    <footer id="registro" class="bg-brand-dark text-white py-24 px-6 relative overflow-hidden">
+        <!-- Subtle background glow -->
+        <div
+            class="absolute w-96 h-96 bg-brand-guinda rounded-full blur-[100px] opacity-20 -top-20 -right-20 pointer-events-none">
+        </div>
+        <div
+            class="absolute w-96 h-96 bg-brand-oro rounded-full blur-[100px] opacity-10 -bottom-20 -left-20 pointer-events-none">
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-black mb-6">Únete a la Vanguardia</h2>
+            <p class="text-gray-400 mb-10 text-lg">Acceso preferencial para estudiantes y profesionales del sector
+                tecnológico.</p>
+            <button
+                class="bg-gradient-to-r from-brand-oro to-yellow-500 text-brand-dark px-10 py-5 font-black text-lg rounded-lg hover:shadow-2xl hover:shadow-yellow-500/20 transition-all transform hover:-translate-y-1">
+                REGISTRAR MI ASISTENCIA AL OPEN DAY
+            </button>
+            <div
+                class="mt-24 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between text-sm text-gray-500 gap-4">
+                <p>© 2026 ANEIMERA UNMSM.</p>
+                <a href="mailto:presidencia@aneimera.com"
+                    class="hover:text-white transition-colors">presidencia@aneimera.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const scheduleData = [
+            {
+                block: 1,
+                name: "BLOQUE I: Ecosistema Estudiantil y Visión Industrial",
+                items: [
+                    { time: "13:00 - 13:20", title: "IEEE PES: Potencia y Energía", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo PES" },
+                    { time: "13:20 - 13:40", title: "IEEE RAS: Robótica y Automatización", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo RAS" },
+                    { time: "13:40 - 14:00", title: "IEEE EDS: Dispositivos Electrónicos", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo EDS" },
+                    { time: "14:00 - 14:20", title: "IEEE COMSOC: Comunicaciones", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo COMSOC" },
+                    { time: "14:20 - 14:40", title: "IEEE WIE: Women in Engineering", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo WIE" },
+                    { time: "14:40 - 15:00", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Jesús Salazar Nishi (Koplast)", desc: "Liderazgo en manufactura." },
+                    { time: "15:00 - 15:20", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Piero Saravia (Minsur)", desc: "Innovación tecnológica minera." },
+                    { time: "15:20 - 15:40", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Elena Rojas (AWS)", desc: "Arquitectura Cloud." }
+                ]
+            },
+            {
+                block: 2,
+                name: "BLOQUE II: Innovación, Procesos e Integración Aplicada",
+                items: [
+                    { time: "15:40 - 16:00", title: "ASME: Ingeniería Mecánica", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo ASME", desc: "Diseño de máquinas." },
+                    { time: "16:00 - 16:20", title: "AIChE: Ingeniería Química", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo AIChE", desc: "Procesos industriales." },
+                    { time: "16:20 - 16:40", title: "MULTITRONICS: Integración", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Multitronics", desc: "Integración mecatrónica." },
+                    { time: "16:40 - 17:00", title: "ROBOTITOS: Robótica Competitiva", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Robotitos", desc: "Innovación y competitividad." },
+                    { time: "17:00 - 17:20", title: "INFORTEGRAF PERÚ: Soluciones IT", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Infortegraf", desc: "Desarrollo informático." },
+                    { time: "17:20 - 17:40", title: "Masterclass Ciberseguridad", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Carlos Mendoza (Fortinet)", desc: "Protección de infraestructuras críticas." },
+                    { time: "17:40 - 18:00", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Valeria Torres (Siemens)", desc: "Gestión de proyectos tecnológicos." }
+                ]
+            }
+        ];
+
+        let currentFilter = 'all';
+
+        function render() {
+            const container = document.getElementById('schedule-render');
+            container.innerHTML = '';
+
+            scheduleData.forEach((block, index) => {
+                const filteredItems = block.items.filter(i => currentFilter === 'all' || i.type === currentFilter);
+                if (filteredItems.length === 0) return;
+
+                const blockSection = document.createElement('section');
+                blockSection.className = 'fade-in visible';
+
+                // Color coordination for badges
+                const badgeColorMap = {
+                    'ieee': 'bg-blue-50 text-blue-700 border-blue-200',
+                    'masterclass': 'bg-yellow-50 text-yellow-700 border-yellow-200 shadow-sm',
+                    'agrupacion': 'bg-gray-100 text-gray-700 border-gray-200'
+                };
+
+                blockSection.innerHTML = `
+                    <h3 class="text-sm font-black tracking-widest text-brand-guinda uppercase mb-6 border-b-2 border-brand-guinda/10 pb-3">${block.name}</h3>
+                    <div class="space-y-4">
+                        ${filteredItems.map(item => `
+                            <div class="schedule-card bg-white p-5 rounded-xl border border-gray-100 flex flex-col md:flex-row md:items-center gap-4">
+                                <div class="w-32 font-mono text-sm font-bold ${item.type === 'masterclass' ? 'text-brand-oro' : 'text-brand-guinda'}">${item.time}</div>
+                                <div class="flex-grow">
+                                    <h4 class="font-bold text-gray-900 text-lg leading-tight mb-1">${item.title}</h4>
+                                    <p class="text-sm text-gray-500 font-medium">${item.speaker} ${item.desc ? `<span class="opacity-75 font-normal">• ${item.desc}</span>` : ''}</p>
+                                </div>
+                                <div class="flex-shrink-0 mt-3 md:mt-0">
+                                    <span class="text-[10px] font-black tracking-wider uppercase px-3 py-1.5 rounded-md border ${badgeColorMap[item.type]}">
+                                        ${item.typeLabel}
+                                    </span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(blockSection);
+            });
+        }
+
+        // Gráfico con colores ANEIMERA e institucionales
+        function initChart() {
+            const ctx = document.getElementById('compositionChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['IEEE', 'Masterclass', 'Agrupaciones'],
+                    datasets: [{
+                        // Actual data: 5 IEEE, 5 Masterclasses, 5 Agrupaciones
+                        data: [5, 5, 5],
+                        backgroundColor: ['#2563EB', '#C49A45', '#111827'],
+                        borderWidth: 0,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10, weight: 'bold', family: "'Inter', sans-serif" } } }
+                    },
+                    cutout: '75%'
+                }
+            });
+        }
+
+        // Sistema de Filtrado
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Remove active class from all
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-brand-guinda', 'text-white', 'shadow-lg', 'shadow-red-900/20');
+                    b.classList.add('bg-gray-50', 'text-brand-muted');
+                });
+                // Add active class to clicked
+                btn.classList.remove('bg-gray-50', 'text-brand-muted');
+                btn.classList.add('bg-brand-guinda', 'text-white', 'shadow-lg', 'shadow-red-900/20');
+
+                currentFilter = btn.dataset.filter;
+                render();
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            render();
+            initChart();
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
