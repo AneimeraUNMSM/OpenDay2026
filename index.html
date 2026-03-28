@@ -305,6 +305,7 @@
             transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             will-change: transform;
         }
+
         .transform-style-3d {
             transform-style: preserve-3d;
         }
@@ -524,52 +525,79 @@
     <!-- Virtual Ticket Generator -->
     <section id="virtual-ticket" class="max-w-4xl mx-auto px-4 sm:px-6 pb-24 relative z-10 w-full perspective-[1500px]">
         <div class="text-center mb-10">
-            <h2 class="text-3xl md:text-5xl font-black text-brand-dark mb-4 drop-shadow-sm">Tu Pase Holográfico Ciber-Físico</h2>
-            <p class="text-gray-500 max-w-lg mx-auto md:text-lg">Genera tu credencial inmersiva 3D para el Open Day. Captúrala, presúmela en redes y aparta tu cupo.</p>
+            <h2 class="text-3xl md:text-5xl font-black text-brand-dark mb-4 drop-shadow-sm">Tu Pase Holográfico
+                Ciber-Físico</h2>
+            <p class="text-gray-500 max-w-lg mx-auto md:text-lg">Genera tu credencial inmersiva 3D para el Open Day.
+                Captúrala, presúmela en redes y aparta tu cupo.</p>
         </div>
 
-        <div class="relative w-full max-w-2xl mx-auto transition-transform duration-700 transform-style-3d h-[500px] sm:h-[400px]" id="vt-container">
+        <div class="relative w-full max-w-2xl mx-auto transition-transform duration-700 transform-style-3d h-[500px] sm:h-[400px]"
+            id="vt-container">
             <!-- Formulario (Frente Inicial) -->
-            <div id="vt-form-container" class="absolute inset-0 bg-white p-6 sm:p-10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 z-20 flex flex-col justify-center transition-all duration-700 opacity-100 scale-100">
+            <div id="vt-form-container"
+                class="absolute inset-0 bg-white p-6 sm:p-10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 z-20 flex flex-col justify-center transition-all duration-700 opacity-100 scale-100">
                 <form id="vt-form" onsubmit="generateTicket(event)" class="space-y-5 w-full">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div class="col-span-1 sm:col-span-2">
-                            <label class="block text-[10px] font-black text-gray-400 mb-1 tracking-widest uppercase">Identificación Operador</label>
-                            <input type="text" id="vt-name" required placeholder="Ej. Alex Ingeniero" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-brand-guinda focus:ring-1 focus:ring-brand-guinda transition-all font-mono font-bold text-brand-dark shadow-inner">
+                            <label
+                                class="block text-[10px] font-black text-gray-400 mb-1 tracking-widest uppercase">Identificación
+                                Operador</label>
+                            <input type="text" id="vt-name" required placeholder="Ej. Alex Ingeniero"
+                                class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-brand-guinda focus:ring-1 focus:ring-brand-guinda transition-all font-mono font-bold text-brand-dark shadow-inner">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-black text-gray-400 mb-1 tracking-widest uppercase">Academia (Universidad)</label>
-                            <input type="text" id="vt-uni" required placeholder="Ej. UNMSM, UNI..." class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-brand-guinda focus:ring-1 focus:ring-brand-guinda transition-all font-mono font-bold text-brand-dark shadow-inner">
+                            <label
+                                class="block text-[10px] font-black text-gray-400 mb-1 tracking-widest uppercase">Academia
+                                (Universidad)</label>
+                            <input type="text" id="vt-uni" required placeholder="Ej. UNMSM, UNI..."
+                                class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-brand-guinda focus:ring-1 focus:ring-brand-guinda transition-all font-mono font-bold text-brand-dark shadow-inner">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-black text-gray-400 mb-1 tracking-widest uppercase">Base / Año</label>
-                            <input type="text" id="vt-base" placeholder="Ej. 24" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-brand-guinda focus:ring-1 focus:ring-brand-guinda transition-all font-mono font-bold text-brand-dark shadow-inner">
+                            <label
+                                class="block text-[10px] font-black text-gray-400 mb-1 tracking-widest uppercase">Base /
+                                Año</label>
+                            <input type="text" id="vt-base" placeholder="Ej. 24"
+                                class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-brand-guinda focus:ring-1 focus:ring-brand-guinda transition-all font-mono font-bold text-brand-dark shadow-inner">
                         </div>
                         <div class="col-span-1 sm:col-span-2">
-                            <label class="block text-[10px] font-black text-gray-400 mb-1 tracking-widest uppercase">División (Carrera)</label>
-                            <input type="text" id="vt-carr" required placeholder="Ej. Ing. Electrónica" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-brand-guinda focus:ring-1 focus:ring-brand-guinda transition-all font-mono font-bold text-brand-dark shadow-inner">
+                            <label
+                                class="block text-[10px] font-black text-gray-400 mb-1 tracking-widest uppercase">División
+                                (Carrera)</label>
+                            <input type="text" id="vt-carr" required placeholder="Ej. Ing. Electrónica"
+                                class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-brand-guinda focus:ring-1 focus:ring-brand-guinda transition-all font-mono font-bold text-brand-dark shadow-inner">
                         </div>
                     </div>
-                    <button type="submit" class="w-full mt-2 bg-gradient-to-r from-brand-dark to-black text-white font-black uppercase tracking-[0.2em] py-4 rounded-lg hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:-translate-y-1 transition-all duration-500 overflow-hidden relative group">
-                        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    <button type="submit"
+                        class="w-full mt-2 bg-gradient-to-r from-brand-dark to-black text-white font-black uppercase tracking-[0.2em] py-4 rounded-lg hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:-translate-y-1 transition-all duration-500 overflow-hidden relative group">
+                        <div
+                            class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+                        </div>
                         ENSAMBLAR NODO
                     </button>
                 </form>
             </div>
 
             <!-- Resultado del Ticket 3D -->
-            <div id="vt-result-container" class="absolute inset-0 w-full z-10 pointer-events-none opacity-0 scale-95 transition-all duration-700 flex items-center justify-center">
-                <div id="the-3d-ticket" class="w-full h-auto min-h-[460px] sm:min-h-full sm:h-full bg-[#0a0a0a] rounded-2xl relative overflow-hidden flex flex-col sm:flex-row shadow-[0_40px_80px_rgba(0,0,0,0.7)] border border-gray-700/80 cursor-crosshair ticket-3d" onmousemove="handleTicketMove(event)" onmouseleave="handleTicketLeave(event)">
-                    
+            <div id="vt-result-container"
+                class="absolute inset-0 w-full z-10 pointer-events-none opacity-0 scale-95 transition-all duration-700 flex items-center justify-center">
+                <div id="the-3d-ticket"
+                    class="w-full h-auto min-h-[460px] sm:min-h-full sm:h-full bg-[#0a0a0a] rounded-2xl relative overflow-hidden flex flex-col sm:flex-row shadow-[0_40px_80px_rgba(0,0,0,0.7)] border border-gray-700/80 cursor-crosshair ticket-3d"
+                    onmousemove="handleTicketMove(event)" onmouseleave="handleTicketLeave(event)">
+
                     <!-- Brillo Glare (Light Map) -->
-                    <div class="glare absolute inset-0 rounded-2xl z-30 pointer-events-none transition-all duration-75 mix-blend-overlay"></div>
-                    
+                    <div
+                        class="glare absolute inset-0 rounded-2xl z-30 pointer-events-none transition-all duration-75 mix-blend-overlay">
+                    </div>
+
                     <!-- Left Strip (Barcode) -->
-                    <div class="w-full sm:w-28 bg-gradient-to-b from-brand-guinda/20 to-black border-b sm:border-b-0 sm:border-r border-gray-800 flex flex-row sm:flex-col items-center justify-between p-4 px-6 sm:px-4 sm:py-6 z-10 relative">
-                        <div class="w-12 h-12 border-[3px] border-brand-guinda rounded-lg flex items-center justify-center -rotate-90 sm:rotate-0 shadow-[0_0_15px_rgba(123,17,19,0.5)]">
+                    <div
+                        class="w-full sm:w-28 bg-gradient-to-b from-brand-guinda/20 to-black border-b sm:border-b-0 sm:border-r border-gray-800 flex flex-row sm:flex-col items-center justify-between p-4 px-6 sm:px-4 sm:py-6 z-10 relative">
+                        <div
+                            class="w-12 h-12 border-[3px] border-brand-guinda rounded-lg flex items-center justify-center -rotate-90 sm:rotate-0 shadow-[0_0_15px_rgba(123,17,19,0.5)]">
                             <span class="text-brand-guinda font-black text-lg tracking-tighter">OD</span>
                         </div>
-                        <div class="flex flex-row sm:flex-col gap-1 sm:h-40 transform -rotate-90 sm:rotate-0 origin-center justify-center opacity-60 mix-blend-screen">
+                        <div
+                            class="flex flex-row sm:flex-col gap-1 sm:h-40 transform -rotate-90 sm:rotate-0 origin-center justify-center opacity-60 mix-blend-screen">
                             <div class="w-px sm:w-full h-8 sm:h-px bg-white"></div>
                             <div class="w-1.5 sm:w-full h-8 sm:h-1.5 bg-white"></div>
                             <div class="w-1.5 sm:w-full h-8 sm:h-1.5 bg-white"></div>
@@ -578,67 +606,113 @@
                             <div class="w-px sm:w-full h-8 sm:h-px bg-white"></div>
                             <div class="w-1.5 sm:w-full h-8 sm:h-1.5 bg-white drop-shadow-[0_0_5px_white]"></div>
                         </div>
-                        <span class="text-[10px] text-gray-500 font-mono tracking-[0.2em] rotate-0 sm:-rotate-90 font-bold whitespace-nowrap">AC-2026-X</span>
+                        <span
+                            class="text-[10px] text-gray-500 font-mono tracking-[0.2em] rotate-0 sm:-rotate-90 font-bold whitespace-nowrap">AC-2026-X</span>
                     </div>
 
                     <!-- Right Body -->
-                    <div class="flex-grow p-6 sm:p-8 flex flex-col justify-between relative z-10 overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-800/40 via-[#111] to-[#050505]">
+                    <div
+                        class="flex-grow p-6 sm:p-8 flex flex-col justify-between relative z-10 overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-800/40 via-[#111] to-[#050505]">
                         <!-- Background Cyber Render -->
                         <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
-                            <svg width="250" height="250" viewBox="0 0 100 100" class="animate-[spin_40s_linear_infinite]"><path d="M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z" fill="none" stroke="white" stroke-width="0.5"/><circle cx="50" cy="50" r="30" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="2 4"/><circle cx="50" cy="50" r="10" fill="none" stroke="white" stroke-width="1"/></svg>
+                            <svg width="250" height="250" viewBox="0 0 100 100"
+                                class="animate-[spin_40s_linear_infinite]">
+                                <path d="M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z" fill="none" stroke="white"
+                                    stroke-width="0.5" />
+                                <circle cx="50" cy="50" r="30" fill="none" stroke="white" stroke-width="0.5"
+                                    stroke-dasharray="2 4" />
+                                <circle cx="50" cy="50" r="10" fill="none" stroke="white" stroke-width="1" />
+                            </svg>
                         </div>
-                        
+
                         <!-- Content -->
                         <div class="relative z-10 pt-2 sm:pt-0">
                             <div class="flex flex-wrap justify-between items-start gap-4 mb-8">
                                 <div>
-                                    <h5 class="text-brand-oro font-black text-[10px] tracking-[0.4em] uppercase mb-1 drop-shadow-[0_0_8px_rgba(196,154,69,0.5)]">Pass Level</h5>
-                                    <h3 class="text-white text-xl sm:text-2xl font-black uppercase tracking-widest drop-shadow-md">ACCESS GRANTED</h3>
+                                    <h5
+                                        class="text-brand-oro font-black text-[10px] tracking-[0.4em] uppercase mb-1 drop-shadow-[0_0_8px_rgba(196,154,69,0.5)]">
+                                        Pass Level</h5>
+                                    <h3
+                                        class="text-white text-xl sm:text-2xl font-black uppercase tracking-widest drop-shadow-md">
+                                        ACCESS GRANTED</h3>
                                 </div>
                                 <div class="text-right">
-                                    <span class="inline-block bg-[#1a1a1a] text-sky-400 text-xs sm:text-sm font-black tracking-widest px-3 py-1.5 rounded border border-gray-700 font-mono shadow-[0_0_15px_rgba(14,165,233,0.2)]" id="ticket-out-base">B-24</span>
+                                    <span
+                                        class="inline-block bg-[#1a1a1a] text-sky-400 text-xs sm:text-sm font-black tracking-widest px-3 py-1.5 rounded border border-gray-700 font-mono shadow-[0_0_15px_rgba(14,165,233,0.2)]"
+                                        id="ticket-out-base">B-24</span>
                                 </div>
                             </div>
-                            
+
                             <!-- Participant Info -->
                             <div class="space-y-6">
                                 <div>
-                                    <p class="text-gray-500 text-[10px] uppercase tracking-[0.3em] font-black mb-1">Node Operator</p>
-                                    <p class="text-3xl sm:text-4xl lg:text-5xl text-white font-black uppercase leading-none tracking-tighter drop-shadow-lg break-words" id="ticket-out-name">NAME</p>
+                                    <p class="text-gray-500 text-[10px] uppercase tracking-[0.3em] font-black mb-1">Node
+                                        Operator</p>
+                                    <p class="text-3xl sm:text-4xl lg:text-5xl text-white font-black uppercase leading-none tracking-tighter drop-shadow-lg break-words"
+                                        id="ticket-out-name">NAME</p>
                                 </div>
                                 <div class="flex flex-col sm:flex-row gap-6">
                                     <div class="w-full sm:w-1/2 min-w-0">
-                                        <p class="text-gray-500 text-[10px] uppercase tracking-[0.3em] font-black mb-1">Academy</p>
-                                        <p class="text-white font-mono text-sm uppercase break-words" id="ticket-out-uni">UNMSM</p>
+                                        <p class="text-gray-500 text-[10px] uppercase tracking-[0.3em] font-black mb-1">
+                                            Academy</p>
+                                        <p class="text-white font-mono text-sm uppercase break-words"
+                                            id="ticket-out-uni">UNMSM</p>
                                     </div>
                                     <div class="w-full sm:w-1/2 min-w-0">
-                                        <p class="text-gray-500 text-[10px] uppercase tracking-[0.3em] font-black mb-1">Division</p>
-                                        <p class="text-white font-mono text-sm uppercase break-words" id="ticket-out-carr">SISTEMAS</p>
+                                        <p class="text-gray-500 text-[10px] uppercase tracking-[0.3em] font-black mb-1">
+                                            Division</p>
+                                        <p class="text-white font-mono text-sm uppercase break-words"
+                                            id="ticket-out-carr">SISTEMAS</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-8 flex justify-between items-end border-t border-gray-800/80 pt-4 pb-1 relative z-10 w-full">
-                            <span class="text-gray-600 font-mono text-[9px] sm:text-[10px] tracking-wider">&gt; ENCRYPTED_0804</span>
-                            <span class="text-yellow-500 font-black tracking-[0.2em] text-[10px] sm:text-xs text-right whitespace-nowrap">VIP PROTOCOL</span>
+                        <div
+                            class="mt-8 flex justify-between items-end border-t border-gray-800/80 pt-4 pb-1 relative z-10 w-full">
+                            <span class="text-gray-600 font-mono text-[9px] sm:text-[10px] tracking-wider">&gt;
+                                ENCRYPTED_0804</span>
+                            <span
+                                class="text-yellow-500 font-black tracking-[0.2em] text-[10px] sm:text-xs text-right whitespace-nowrap">VIP
+                                PROTOCOL</span>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Action Panel -->
-            <div id="vt-action-panel" class="hidden absolute -bottom-24 sm:-bottom-20 left-1/2 -translate-x-1/2 flex flex-wrap justify-center gap-2 sm:gap-4 z-40 w-[110%] sm:w-full px-2">
-                <button onclick="downloadTicket(event)" class="bg-brand-oro text-brand-dark px-4 sm:px-6 py-3 rounded-xl text-xs sm:text-sm font-black uppercase tracking-widest hover:bg-yellow-400 hover:shadow-[0_0_20px_rgba(196,154,69,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2 group">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:animate-bounce"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <div id="vt-action-panel"
+                class="hidden absolute -bottom-24 sm:-bottom-20 left-1/2 -translate-x-1/2 flex flex-wrap justify-center gap-2 sm:gap-4 z-40 w-[110%] sm:w-full px-2">
+                <button onclick="downloadTicket(event)"
+                    class="bg-brand-oro text-brand-dark px-4 sm:px-6 py-3 rounded-xl text-xs sm:text-sm font-black uppercase tracking-widest hover:bg-yellow-400 hover:shadow-[0_0_20px_rgba(196,154,69,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2 group">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" class="group-hover:animate-bounce">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
                     Descargar
                 </button>
-                <button onclick="shareTicket(event)" class="bg-[#25D366] text-white px-4 sm:px-6 py-3 rounded-xl text-xs sm:text-sm font-black uppercase tracking-widest hover:bg-[#1ebd5a] hover:shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2 group">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:rotate-12 transition-transform"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <button onclick="shareTicket(event)"
+                    class="bg-[#25D366] text-white px-4 sm:px-6 py-3 rounded-xl text-xs sm:text-sm font-black uppercase tracking-widest hover:bg-[#1ebd5a] hover:shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:-translate-y-1 transition-all flex items-center gap-2 group">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="group-hover:rotate-12 transition-transform">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
                     Compartir
                 </button>
-                <button onclick="resetTicket()" title="Generar Nuevo Ticket" class="bg-gray-800 text-gray-300 px-4 py-3 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-gray-700 hover:text-white transition-all flex items-center justify-center transform hover:rotate-180 duration-500">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+                <button onclick="resetTicket()" title="Generar Nuevo Ticket"
+                    class="bg-gray-800 text-gray-300 px-4 py-3 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-gray-700 hover:text-white transition-all flex items-center justify-center transform hover:rotate-180 duration-500">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                        <path d="M3 3v5h5"></path>
+                    </svg>
                 </button>
             </div>
         </div>
@@ -764,14 +838,14 @@
         // --- Ticket Export & Share Logic ---
         async function captureTicketDOM() {
             const ticket = document.getElementById('the-3d-ticket');
-            
+
             // Save state
             const originalTransform = ticket.style.transform;
             const originalTransition = ticket.style.transition;
             const originalHeight = ticket.style.height;
             const glare = ticket.querySelector('.glare');
             const originalGlare = glare.style.background;
-            
+
             // 1. Flatten 3D to 2D & Fix bounds for accurate Canvas rendering
             ticket.style.transition = 'none';
             ticket.style.transform = 'none';
@@ -779,14 +853,14 @@
             ticket.style.height = ticket.offsetHeight + 'px';
             ticket.classList.remove('ticket-3d', 'transform-style-3d');
             glare.style.background = 'transparent';
-            
+
             // Force redraw logic
             await new Promise(resolve => setTimeout(resolve, 50));
 
             // 2. Capture Image
             const canvas = await html2canvas(ticket, {
                 scale: 2.5, // Better resolution
-                useCORS: true, 
+                useCORS: true,
                 backgroundColor: '#0a0a0a',
                 logging: false
             });
@@ -805,7 +879,7 @@
             const btn = event.currentTarget;
             const originalHTML = btn.innerHTML;
             btn.innerHTML = '<span class="animate-pulse">CARGANDO...</span>';
-            
+
             try {
                 const canvas = await captureTicketDOM();
                 const link = document.createElement('a');
@@ -828,7 +902,7 @@
             try {
                 const canvas = await captureTicketDOM();
                 const dataUrl = canvas.toDataURL('image/png');
-                
+
                 // Convert DataURL to Blob -> File for sharing API
                 const blob = await (await fetch(dataUrl)).blob();
                 const file = new File([blob], 'Pase-OpenDay-ANEIMERA.png', { type: 'image/png' });
@@ -878,13 +952,13 @@
 
             formContainer.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
             formContainer.classList.remove('opacity-100', 'scale-100');
-            
+
             setTimeout(() => {
                 resContainer.classList.remove('hidden');
                 setTimeout(() => {
                     resContainer.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
                     resContainer.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
-                    
+
                     actionPanel.classList.remove('hidden');
                     // Add a tiny delay to animate the action panel if desired, or just show it:
                     actionPanel.classList.add('flex');
@@ -899,10 +973,10 @@
 
             resContainer.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
             resContainer.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-            
+
             actionPanel.classList.add('hidden');
             actionPanel.classList.remove('flex');
-            
+
             setTimeout(() => {
                 formContainer.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
                 formContainer.classList.add('opacity-100', 'scale-100');
@@ -914,20 +988,20 @@
             const card = document.getElementById('the-3d-ticket');
             const glare = card.querySelector('.glare');
             const rect = card.getBoundingClientRect();
-            
+
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
+
             // Limit max rotation to 12 degrees
             const rotateX = ((y - centerY) / centerY) * -12;
             const rotateY = ((x - centerX) / centerX) * 12;
 
             card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
             card.style.transition = 'transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            
+
             // Dynamic glare calculation
             const px = x / rect.width * 100;
             const py = y / rect.height * 100;
@@ -948,9 +1022,9 @@
                 name: "BLOQUE I: Ecosistema Estudiantil y Visión Industrial",
                 items: [
                     { time: "13:00 - 13:20", title: "IEEE PES: Potencia y Energía", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo PES", desc: "Sistemas de energía.", fullDesc: "Desarrollo de innovaciones sostenibles para generación, transmisión y distribución de energía inteligente.", project: "Proyecto destacado: Microrred eólica experimental.", logo: "logo-pes.png", socials: { ig: "#", wp: "#" } },
-                    { time: "13:20 - 13:40", title: "IEEE RAS: Robótica y Automatización", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo RAS", desc: "Robótica industrial.", fullDesc: "Investigación y aplicación de sistemas mecatrónicos autónomos e inteligencia artificial aplicada.", project: "Proyecto destacado: Robot cuadrúpedo de exploración.", logo: "logo-ras.jpeg", socials: { ig: "#", wp: "#" } },
-                    { time: "13:40 - 14:00", title: "IEEE EDS: Dispositivos Electrónicos", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo EDS", desc: "Componentes avanzados.", fullDesc: "Diseño e implementación de semiconductores, microelectrónica y sensores de vanguardia.", project: "Proyecto destacado: Sensor biomédico no invasivo.", logo: "logo-eds.png", socials: { ig: "#", wp: "#" } },
-                    { time: "14:00 - 14:20", title: "IEEE COMSOC: Comunicaciones", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo COMSOC", desc: "Telecomunicaciones.", fullDesc: "Exploración de protocolos 5G/6G, IoT, redes inalámbricas y procesamiento de señales.", project: "Proyecto destacado: Red IoT para medición climática.", logo: "logo-comsoc.jpeg", socials: { ig: "#", wp: "#" } },
+                    { time: "13:20 - 13:40", title: "IEEE RAS: Robótica y Automatización", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo RAS", desc: "Robótica industrial.", fullDesc: "Investigación y aplicación de sistemas mecatrónicos autónomos e inteligencia artificial aplicada.", project: "Proyecto destacado: Robot cuadrúpedo de exploración.", logo: "logo-ras.png", socials: { ig: "https://www.instagram.com/ieee.ras.unmsm?igsh=MXgyaG9wdzhpeHEzeg==" } },
+                    { time: "13:40 - 14:00", title: "IEEE EDS: Dispositivos Electrónicos", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo EDS", desc: "Componentes avanzados.", fullDesc: "Diseño e implementación de semiconductores, microelectrónica y sensores de vanguardia.", project: "Proyecto destacado: Sensor biomédico no invasivo.", logo: "logo-eds.png", socials: { ig: "https://www.instagram.com/ieee.eds.unmsm?igsh=NDJjODdxYnFwajRv", wp: "https://chat.whatsapp.com/E1rcptfVd1n1iZ2nmeVVMV?mode=gi_t" } },
+                    { time: "14:00 - 14:20", title: "IEEE COMSOC: Comunicaciones", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo COMSOC", desc: "Telecomunicaciones.", fullDesc: "Exploración de protocolos 5G/6G, IoT, redes inalámbricas y procesamiento de señales.", project: "Proyecto destacado: Red IoT para medición climática.", logo: "logo-comsoc.jpeg", socials: { ig: "https://www.instagram.com/ieee.comsoc.unmsm?igsh=ZWhudWtxdHI2Z2Q=", wp: "https://whatsapp.com/channel/0029VbBRCFA0wak1FWoYuy2i" } },
                     { time: "14:20 - 14:40", title: "IEEE WIE: Women in Engineering", type: "ieee", typeLabel: "IEEE", speaker: "Capítulo WIE", desc: "Liderazgo femenino.", fullDesc: "Promoción y empoderamiento de mujeres en disciplinas STEM a través de mentoreo y tecnología.", project: "Proyecto destacado: STEM Girls App.", logo: "logo-wie.jpeg", socials: { ig: "#", wp: "#" } },
                     { time: "14:40 - 15:00", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Jesús Salazar Nishi (Koplast)", desc: "Liderazgo en manufactura.", socials: { in: "#" } },
                     { time: "15:00 - 15:20", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Piero Saravia (Minsur)", desc: "Innovación tecnológica minera.", socials: { in: "#" } },
@@ -961,10 +1035,10 @@
                 block: 2,
                 name: "BLOQUE II: Innovación, Procesos e Integración Aplicada",
                 items: [
-                    { time: "15:40 - 16:00", title: "ASME: Ingeniería Mecánica", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo ASME", desc: "Diseño de máquinas.", fullDesc: "Desarrollo de proyectos y habilidades en ingeniería mecánica con aplicación práctica.", project: "Proyecto destacado: Vehículo Rover todoterreno.", logo: "logo-asme.jpeg", socials: { ig: "#", wp: "#" } },
-                    { time: "16:00 - 16:20", title: "AIChE: Ingeniería Química", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo AIChE", desc: "Procesos industriales.", fullDesc: "Diseño de procesos químicos sostenibles y experimentación aplicativa industrial.", project: "Proyecto destacado: Planta piloto de biocombustibles.", logo: "logo-aiche.png", socials: { ig: "#", wp: "#" } },
-                    { time: "16:20 - 16:40", title: "MULTITRONICS: Integración", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Multitronics", desc: "Integración mecatrónica.", fullDesc: "Integración de sistemas electrónicos, control y mecánica para crear soluciones robóticas de alto nivel.", project: "Proyecto destacado: Brazo robótico automatizado.", logo: "logo-multitronics.png", socials: { ig: "#", wp: "#" } },
-                    { time: "16:40 - 17:00", title: "ROBOTITOS & INFORTEGRAF: Robótica y Soluciones IT", type: "agrupacion", typeLabel: "Agrupación Conjunta", speaker: "Equipos Robotitos e Infortegraf", desc: "Innovación mecatrónica e IT.", fullDesc: "Fusión de robótica competitiva, automatización ágil, desarrollo de software e inteligencia artificial para el ecosistema uniersitario.", project: "Proyecto destacado: Robot Autónomo IoT.", logo: "logo-robotitos.jpeg", logoHover: "logo-infortegraf.jpeg", socials: { ig: "#", wp: "#" } },
+                    { time: "15:40 - 16:00", title: "ASME: Ingeniería Mecánica", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo ASME", desc: "Diseño de máquinas.", fullDesc: "Desarrollo de proyectos y habilidades en ingeniería mecánica con aplicación práctica.", project: "Proyecto destacado: Vehículo Rover todoterreno.", logo: "logo-asme.jpeg", socials: { ig: "https://www.instagram.com/asmeunmsm?igsh=aGNzbmQ2YnQ5aGtw", wp: "https://whatsapp.com/channel/0029VbC0Va5CnA80xQktmz3t" } },
+                    { time: "16:00 - 16:20", title: "AIChE: Ingeniería Química", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo AIChE", desc: "Procesos industriales.", fullDesc: "Diseño de procesos químicos sostenibles y experimentación aplicativa industrial.", project: "Proyecto destacado: Planta piloto de biocombustibles.", logo: "logo-aiche.png", socials: { ig: "https://www.instagram.com/aiche_unmsm?igsh=NWxqYzk3MGxtcjRk", wp: "https://whatsapp.com/channel/0029VbAhnjrFSAsxbKdrwF0L" } },
+                    { time: "16:20 - 16:40", title: "MULTITRONICS: Integración", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Multitronics", desc: "Integración mecatrónica.", fullDesc: "Integración de sistemas electrónicos, control y mecánica para crear soluciones robóticas de alto nivel.", project: "Proyecto destacado: Brazo robótico automatizado.", logo: "logo-multitronics.png", socials: { ig: "https://www.instagram.com/_multitronics_/" } },
+                    { time: "16:40 - 17:00", title: "ROBOTITOS & INFORTEGRAF: Robótica y Soluciones IT", type: "agrupacion", typeLabel: "Agrupación Conjunta", speaker: "Equipos Robotitos e Infortegraf", desc: "Innovación mecatrónica e IT.", fullDesc: "Fusión de robótica competitiva, automatización ágil, desarrollo de software e inteligencia artificial para el ecosistema uniersitario.", project: "Proyecto destacado: Robot Autónomo IoT.", logo: "logo-robotitos.jpeg", logoHover: "logo-infortegraf.jpeg", socials: { ig: ["https://www.instagram.com/robotitos_peru/", "https://www.instagram.com/infortelgraf/"], wp: ["#robotitos-wp", "#infortegraf-wp"] } },
                     { time: "17:00 - 17:20", title: "Masterclass Biomédica", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Biomédico (Por confirmar)", desc: "Ingeniería aplicada a la salud.", socials: { in: "#" } },
                     { time: "17:20 - 17:40", title: "Masterclass Ciberseguridad", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Carlos Mendoza (Fortinet)", desc: "Protección de infraestructuras críticas.", socials: { in: "#" } },
                     { time: "17:40 - 18:00", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Valeria Torres (Siemens)", desc: "Gestión de proyectos tecnológicos.", socials: { in: "#" } }
@@ -1047,9 +1121,9 @@
                                         <div class="absolute top-1/2 -translate-y-1/2 left-0 z-20 flex flex-col gap-2 transition-all duration-500 opacity-0 group-hover:opacity-100 -translate-x-full scale-95 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto pr-3 hidden sm:flex">
                                             <div class="bg-brand-dark p-2.5 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-gray-700 flex flex-col gap-2.5 relative">
                                                 <div class="absolute right-[-6px] top-1/2 -translate-y-1/2 w-3 h-3 bg-brand-dark border-r border-t border-gray-700 rotate-45"></div>
-                                                ${item.socials.ig ? `<a href="${item.socials.ig}" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-800 text-pink-500 hover:bg-gradient-to-tr hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:text-white transition-all transform hover:scale-110 shadow-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>` : ''}
-                                                ${item.socials.in ? `<a href="${item.socials.in}" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-800 text-blue-400 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-110 shadow-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>` : ''}
-                                                ${item.socials.wp ? `<a href="${item.socials.wp}" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-800 text-green-400 hover:bg-green-500 hover:text-white transition-all transform hover:scale-110 shadow-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>` : ''}
+                                                ${[].concat(item.socials.ig || []).map(link => `<a href="${link}" target="_blank" title="Instagram" class="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-800 text-pink-500 hover:bg-gradient-to-tr hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:text-white transition-all transform hover:scale-110 shadow-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>`).join('')}
+                                                ${[].concat(item.socials.in || []).map(link => `<a href="${link}" target="_blank" title="LinkedIn" class="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-800 text-blue-400 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-110 shadow-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>`).join('')}
+                                                ${[].concat(item.socials.wp || []).map(link => `<a href="${link}" target="_blank" title="WhatsApp" class="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-800 text-green-400 hover:bg-green-500 hover:text-white transition-all transform hover:scale-110 shadow-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>`).join('')}
                                             </div>
                                         </div>
                                         ` : ''}
@@ -1075,9 +1149,9 @@
                                     ${item.socials ? `
                                     <div class="mt-4 flex sm:hidden gap-3 pt-4 border-t border-gray-100 w-full justify-start items-center relative z-20">
                                         <span class="text-xs text-gray-400 font-bold uppercase tracking-wider mr-2">Contactar:</span>
-                                        ${item.socials.ig ? `<a href="${item.socials.ig}" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-50 text-pink-500 active:bg-pink-100 border border-gray-200 transition-colors"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>` : ''}
-                                        ${item.socials.in ? `<a href="${item.socials.in}" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-50 text-blue-600 active:bg-blue-100 border border-gray-200 transition-colors"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>` : ''}
-                                        ${item.socials.wp ? `<a href="${item.socials.wp}" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-50 text-green-600 active:bg-green-100 border border-gray-200 transition-colors"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>` : ''}
+                                        ${[].concat(item.socials.ig || []).map(link => `<a href="${link}" target="_blank" title="Instagram" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-50 text-pink-500 active:bg-pink-100 border border-gray-200 transition-colors"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>`).join('')}
+                                        ${[].concat(item.socials.in || []).map(link => `<a href="${link}" target="_blank" title="LinkedIn" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-50 text-blue-600 active:bg-blue-100 border border-gray-200 transition-colors"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>`).join('')}
+                                        ${[].concat(item.socials.wp || []).map(link => `<a href="${link}" target="_blank" title="WhatsApp" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-50 text-green-600 active:bg-green-100 border border-gray-200 transition-colors"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>`).join('')}
                                     </div>
                                     ` : ''}
                                 </div>
