@@ -250,6 +250,10 @@
                 opacity: 0;
             }
         }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
 
         .animate-trace-pulse {
             stroke-dasharray: 20 100;
@@ -302,7 +306,7 @@
 
     <!-- Hero Section -->
     <header
-        class="relative py-28 px-6 max-w-7xl mx-auto text-center overflow-hidden fade-in min-h-[60vh] flex flex-col justify-center items-center rounded-3xl mt-6 shadow-2xl w-[calc(100%-3rem)] bg-brand-dark mb-12">
+        class="relative py-28 px-4 sm:px-6 max-w-7xl mx-auto text-center overflow-hidden fade-in min-h-[60vh] flex flex-col justify-center items-center rounded-3xl mt-6 shadow-2xl w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] bg-brand-dark mb-12">
         <!-- Background Image of Campus -->
         <div class="absolute inset-0 z-0 bg-brand-dark">
             <img src="fondo-unmsm.png" alt="Campus UNMSM" class="w-full h-full object-cover opacity-90">
@@ -312,14 +316,14 @@
         <div class="relative z-10 w-full transform hover:scale-[1.01] transition-transform duration-700">
             <span class="text-brand-oro font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-6 block">Evento
                 de Ingeniería de Élite</span>
-            <div class="text-6xl md:text-8xl font-black text-white/40 tracking-widest uppercase mb-2 drop-shadow-lg">08
+            <div class="text-5xl sm:text-6xl md:text-8xl font-black text-white/40 tracking-widest uppercase mb-2 drop-shadow-lg">08
                 ABRIL</div>
             <h1
-                class="text-5xl md:text-7xl font-black text-white leading-none mb-8 drop-shadow-2xl relative z-10 -mt-8 sm:-mt-12">
+                class="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-none mb-6 sm:mb-8 drop-shadow-2xl relative z-10 -mt-4 sm:-mt-8 md:-mt-12">
                 Open Day <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-brand-guinda to-brand-oro italic text-6xl md:text-8xl p-1">2026.</span>
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-brand-guinda to-brand-oro italic text-5xl sm:text-6xl md:text-8xl p-1">2026.</span>
             </h1>
-            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light px-4 mb-4">
+            <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed font-light px-2 sm:px-4 mb-4">
                 <strong class="text-white font-bold">8 de Abril.</strong> Explora el núcleo de la innovación tecnológica
                 en la UNMSM. Hardware, software y visión industrial bajo estándares internacionales de gestión.
             </p>
@@ -331,11 +335,11 @@
                 </div>
 
                 <div
-                    class="relative z-10 w-full h-full flex items-center justify-center p-8 sm:p-12 bg-black/70 backdrop-blur-md rounded-2xl border border-brand-oro/30 shadow-[0_0_40px_rgba(196,154,69,0.15)] transition-all duration-300">
+                    class="relative z-10 w-full h-full flex items-center justify-center p-4 sm:p-8 md:p-12 bg-black/70 backdrop-blur-md rounded-2xl border border-brand-oro/30 shadow-[0_0_40px_rgba(196,154,69,0.15)] transition-all duration-300">
 
                     <!-- Circuitry Elements (Inside & Out) -->
                     <div
-                        class="absolute inset-0 w-full h-full pointer-events-none rounded-2xl z-0 border border-brand-guinda/20 group-[.energy-surge]:border-[#0ea5e9]/50 transition-colors duration-700">
+                        class="absolute inset-0 w-full h-full pointer-events-none rounded-2xl z-0 border border-brand-guinda/20 group-[.energy-surge]:border-[#0ea5e9]/50 transition-colors duration-700 overflow-hidden">
                     </div>
 
                     <!-- Floating Gears -->
@@ -420,8 +424,8 @@
             </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 pb-24" id="cronograma">
-        <div class="flex flex-col lg:flex-row gap-12">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 pb-24" id="cronograma">
+        <div class="flex flex-col-reverse lg:flex-row gap-12">
 
             <!-- Left Column: Context (Sticky) -->
             <div class="lg:w-1/3 space-y-8">
@@ -459,18 +463,18 @@
             <div class="lg:w-2/3">
                 <!-- Filter Header -->
                 <div
-                    class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-8 flex flex-wrap items-center justify-between gap-4 sticky top-20 z-40">
-                    <span class="text-xs font-bold uppercase text-brand-muted ml-2">Filtrar Actividades:</span>
-                    <div class="flex flex-wrap gap-2" id="filter-container">
+                    class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sticky top-20 z-40 overflow-hidden">
+                    <span class="text-xs font-bold uppercase text-brand-muted ml-0 sm:ml-2 flex-shrink-0">Filtrar Actividades:</span>
+                    <div class="flex overflow-x-auto whitespace-nowrap scrollbar-hide gap-2 w-full sm:w-auto" id="filter-container" style="scrollbar-width: none;">
                         <button data-filter="all"
-                            class="filter-btn px-4 py-2 rounded text-xs font-bold bg-brand-guinda text-white shadow-lg shadow-red-900/20">TODOS</button>
+                            class="filter-btn px-4 py-2 rounded text-xs font-bold bg-brand-guinda text-white shadow-lg shadow-red-900/20 flex-shrink-0">TODOS</button>
                         <button data-filter="ieee"
-                            class="filter-btn px-4 py-2 rounded text-xs font-bold bg-gray-50 text-brand-muted hover:bg-gray-100 transition-all">CAPÍTULOS
+                            class="filter-btn px-4 py-2 rounded text-xs font-bold bg-gray-50 text-brand-muted hover:bg-gray-100 transition-all flex-shrink-0">CAPÍTULOS
                             IEEE</button>
                         <button data-filter="masterclass"
-                            class="filter-btn px-4 py-2 rounded text-xs font-bold bg-gray-50 text-brand-muted hover:bg-gray-100 transition-all">MASTERCLASSES</button>
+                            class="filter-btn px-4 py-2 rounded text-xs font-bold bg-gray-50 text-brand-muted hover:bg-gray-100 transition-all flex-shrink-0">MASTERCLASSES</button>
                         <button data-filter="agrupacion"
-                            class="filter-btn px-4 py-2 rounded text-xs font-bold bg-gray-50 text-brand-muted hover:bg-gray-100 transition-all">AGRUPACIONES</button>
+                            class="filter-btn px-4 py-2 rounded text-xs font-bold bg-gray-50 text-brand-muted hover:bg-gray-100 transition-all flex-shrink-0">AGRUPACIONES</button>
                     </div>
                 </div>
 
@@ -483,7 +487,7 @@
     </main>
 
     <!-- Footer / Registro -->
-    <footer id="registro" class="bg-brand-dark text-white py-24 px-6 relative overflow-hidden">
+    <footer id="registro" class="bg-brand-dark text-white py-24 px-4 sm:px-6 relative overflow-hidden">
         <!-- Subtle background glow -->
         <div
             class="absolute w-96 h-96 bg-brand-guinda rounded-full blur-[100px] opacity-20 -top-20 -right-20 pointer-events-none">
@@ -551,13 +555,13 @@
                 block: 2,
                 name: "BLOQUE II: Innovación, Procesos e Integración Aplicada",
                 items: [
-                    { time: "15:40 - 16:00", title: "ASME: Ingeniería Mecánica", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo ASME", desc: "Diseño de máquinas.", fullDesc: "Desarrollo de proyectos y habilidades en ingeniería mecánica con aplicación práctica.", project: "Proyecto destacado: Vehículo Rover todoterreno.", logo: "logo-asme.jpeg" },
-                    { time: "16:00 - 16:20", title: "AIChE: Ingeniería Química", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo AIChE", desc: "Procesos industriales.", fullDesc: "Diseño de procesos químicos sostenibles y experimentación aplicativa industrial.", project: "Proyecto destacado: Planta piloto de biocombustibles.", logo: "logo-aiche.png" },
-                    { time: "16:20 - 16:40", title: "MULTITRONICS: Integración", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Multitronics", desc: "Integración mecatrónica.", fullDesc: "Integración de sistemas electrónicos, control y mecánica para crear soluciones robóticas de alto nivel.", project: "Proyecto destacado: Brazo robótico automatizado.", logo: "logo-multitronics.png" },
-                    { time: "16:40 - 17:00", title: "ROBOTITOS & INFORTEGRAF: Robótica y Soluciones IT", type: "agrupacion", typeLabel: "Agrupación Conjunta", speaker: "Equipos Robotitos e Infortegraf", desc: "Innovación mecatrónica e IT.", fullDesc: "Fusión de robótica competitiva, automatización ágil, desarrollo de software e inteligencia artificial para el ecosistema uniersitario.", project: "Proyecto destacado: Robot Autónomo IoT.", logo: "logo-robotitos.jpeg", logoHover: "logo-infortegraf.jpeg" },
-                    { time: "17:00 - 17:20", title: "Masterclass Biomédica", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Biomédico (Por confirmar)", desc: "Ingeniería aplicada a la salud." },
-                    { time: "17:20 - 17:40", title: "Masterclass Ciberseguridad", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Carlos Mendoza (Fortinet)", desc: "Protección de infraestructuras críticas." },
-                    { time: "17:40 - 18:00", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Valeria Torres (Siemens)", desc: "Gestión de proyectos tecnológicos." }
+                    { time: "15:40 - 16:00", title: "ASME: Ingeniería Mecánica", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo ASME", desc: "Diseño de máquinas.", fullDesc: "Desarrollo de proyectos y habilidades en ingeniería mecánica con aplicación práctica.", project: "Proyecto destacado: Vehículo Rover todoterreno.", logo: "logo-asme.jpeg", socials: { ig: "#", in: "#", web: "#" } },
+                    { time: "16:00 - 16:20", title: "AIChE: Ingeniería Química", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo AIChE", desc: "Procesos industriales.", fullDesc: "Diseño de procesos químicos sostenibles y experimentación aplicativa industrial.", project: "Proyecto destacado: Planta piloto de biocombustibles.", logo: "logo-aiche.png", socials: { ig: "#", in: "#" } },
+                    { time: "16:20 - 16:40", title: "MULTITRONICS: Integración", type: "agrupacion", typeLabel: "Agrupación", speaker: "Equipo Multitronics", desc: "Integración mecatrónica.", fullDesc: "Integración de sistemas electrónicos, control y mecánica para crear soluciones robóticas de alto nivel.", project: "Proyecto destacado: Brazo robótico automatizado.", logo: "logo-multitronics.png", socials: { ig: "#", web: "#" } },
+                    { time: "16:40 - 17:00", title: "ROBOTITOS & INFORTEGRAF: Robótica y Soluciones IT", type: "agrupacion", typeLabel: "Agrupación Conjunta", speaker: "Equipos Robotitos e Infortegraf", desc: "Innovación mecatrónica e IT.", fullDesc: "Fusión de robótica competitiva, automatización ágil, desarrollo de software e inteligencia artificial para el ecosistema uniersitario.", project: "Proyecto destacado: Robot Autónomo IoT.", logo: "logo-robotitos.jpeg", logoHover: "logo-infortegraf.jpeg", socials: { ig: "#", in: "#", web: "#" } },
+                    { time: "17:00 - 17:20", title: "Masterclass Biomédica", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Biomédico (Por confirmar)", desc: "Ingeniería aplicada a la salud.", socials: { in: "#" } },
+                    { time: "17:20 - 17:40", title: "Masterclass Ciberseguridad", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Carlos Mendoza (Fortinet)", desc: "Protección de infraestructuras críticas.", socials: { in: "#", web: "#" } },
+                    { time: "17:40 - 18:00", title: "Masterclass Industrial", type: "masterclass", typeLabel: "Masterclass", speaker: "Ing. Valeria Torres (Siemens)", desc: "Gestión de proyectos tecnológicos.", socials: { ig: "#", in: "#" } }
                 ]
             }
         ];
@@ -630,7 +634,20 @@
                     return `
                                 <div class="relative group">
                                     <div class="timeline-node absolute left-0 -ml-[6px] top-6 w-4 h-4 rounded-full bg-white border-[4px] border-brand-oro group-hover:border-sky-400 group-hover:bg-sky-400 shadow-[0_0_8px_rgba(196,154,69,0.5)] transition-all duration-500 z-10 hidden sm:block"></div>
-                                    <div class="schedule-card tech-card-bg bg-white p-5 rounded-xl border border-gray-100 flex flex-col md:flex-row gap-4 relative overflow-hidden transition-all duration-300 group-hover:border-sky-400 group-hover:shadow-[0_0_25px_rgba(14,165,233,0.15)] sm:ml-8" style="--bg-idle: ${bg.idle}; --bg-hover: ${bg.hover};">
+                                    <div class="schedule-card tech-card-bg bg-white p-5 rounded-xl border border-gray-100 flex flex-col md:flex-row gap-4 relative transition-all duration-300 group-hover:border-sky-400 group-hover:shadow-[0_0_25px_rgba(14,165,233,0.15)] sm:ml-[4.5rem]" style="--bg-idle: ${bg.idle}; --bg-hover: ${bg.hover};">
+                                        
+                                        <!-- Social Links Tooltip (Left Side) -->
+                                        ${item.socials ? `
+                                        <div class="absolute top-1/2 -translate-y-1/2 left-0 z-20 flex flex-col gap-2 transition-all duration-500 opacity-0 group-hover:opacity-100 -translate-x-full scale-95 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto pr-3 hidden sm:flex">
+                                            <div class="bg-brand-dark p-2.5 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] border border-gray-700 flex flex-col gap-2.5 relative">
+                                                <div class="absolute right-[-6px] top-1/2 -translate-y-1/2 w-3 h-3 bg-brand-dark border-r border-t border-gray-700 rotate-45"></div>
+                                                ${item.socials.ig ? `<a href="${item.socials.ig}" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-800 text-pink-500 hover:bg-gradient-to-tr hover:from-orange-500 hover:via-pink-500 hover:to-purple-500 hover:text-white transition-all transform hover:scale-110 shadow-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>` : ''}
+                                                ${item.socials.in ? `<a href="${item.socials.in}" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-800 text-blue-400 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-110 shadow-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>` : ''}
+                                                ${item.socials.web ? `<a href="${item.socials.web}" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-800 text-sky-400 hover:bg-sky-500 hover:text-white transition-all transform hover:scale-110 shadow-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>` : ''}
+                                            </div>
+                                        </div>
+                                        ` : ''}
+
                                 <div class="md:w-32 flex-shrink-0 font-mono text-sm font-bold ${item.type === 'masterclass' ? 'text-brand-oro' : 'text-brand-guinda'}">
                                     ${item.time}
                                     ${item.logo ? `
@@ -647,9 +664,19 @@
                                     <p class="text-sm text-gray-500 font-medium">${item.speaker} ${item.desc ? `<span class="opacity-75 font-normal">• ${item.desc}</span>` : ''}</p>
                                     ${item.fullDesc ? `<p class="text-sm text-gray-600 mt-2 leading-relaxed hidden group-hover:block transition-all duration-500 fade-in visible">${item.fullDesc}</p>` : ''}
                                     ${item.project ? `<div class="mt-3 inline-block bg-brand-bg border border-gray-100 px-3 py-1.5 rounded text-xs font-semibold text-brand-guinda shadow-sm hidden group-hover:inline-block transition-all duration-500 fade-in visible">🚀 ${item.project}</div>` : ''}
+                                    
+                                    <!-- Mobile-only Social Bar (Inline below text) -->
+                                    ${item.socials ? `
+                                    <div class="mt-4 flex sm:hidden gap-3 pt-4 border-t border-gray-100 w-full justify-start items-center relative z-20">
+                                        <span class="text-xs text-gray-400 font-bold uppercase tracking-wider mr-2">Contactar:</span>
+                                        ${item.socials.ig ? `<a href="${item.socials.ig}" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-50 text-pink-500 active:bg-pink-100 border border-gray-200 transition-colors"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>` : ''}
+                                        ${item.socials.in ? `<a href="${item.socials.in}" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-50 text-blue-600 active:bg-blue-100 border border-gray-200 transition-colors"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>` : ''}
+                                        ${item.socials.web ? `<a href="${item.socials.web}" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-50 text-sky-500 active:bg-sky-100 border border-gray-200 transition-colors"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a>` : ''}
+                                    </div>
+                                    ` : ''}
                                 </div>
-                                <div class="flex-shrink-0 mt-3 md:mt-0 md:absolute md:top-5 md:right-5 flex flex-col items-start md:items-end gap-3 z-10">
-                                    <span class="text-[10px] font-black tracking-wider uppercase px-3 py-1.5 rounded-md border bg-white/80 backdrop-blur-sm ${badgeColorMap[item.type]}">
+                                <div class="absolute top-4 right-4 flex flex-col items-end gap-3 z-10 transition-transform duration-300">
+                                    <span class="text-[10px] font-black tracking-wider uppercase px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-md border bg-white/95 shadow-sm backdrop-blur-sm ${badgeColorMap[item.type]}">
                                         ${item.typeLabel}
                                     </span>
                                 </div>
