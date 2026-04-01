@@ -28,8 +28,6 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -87,12 +85,6 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        .chart-container {
-            position: relative;
-            height: 260px;
-            width: 100%;
         }
 
         /* SVG Tech Circuitry Efectos */
@@ -309,6 +301,35 @@
         .transform-style-3d {
             transform-style: preserve-3d;
         }
+
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+
+        /* Social Hub Premium Styles (Emerald Forest) */
+        .social-hub-card {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            box-shadow: 0 20px 40px rgba(6, 78, 59, 0.15);
+        }
+
+        .social-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-glow {
+            box-shadow: 0 0 15px rgba(52, 211, 153, 0.3);
+        }
     </style>
 </head>
 
@@ -337,7 +358,7 @@
 
     <!-- Hero Section -->
     <header
-        class="relative py-28 px-4 sm:px-6 max-w-7xl mx-auto text-center overflow-hidden fade-in min-h-[60vh] flex flex-col justify-center items-center rounded-3xl mt-6 shadow-2xl w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] bg-brand-dark mb-12">
+        class="relative py-28 px-4 sm:px-6 max-w-7xl mx-auto text-center overflow-hidden min-h-[60vh] flex flex-col justify-center items-center rounded-3xl mt-6 shadow-2xl w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] bg-brand-dark mb-12">
         <!-- Background Image of Campus -->
         <div class="absolute inset-0 z-0 bg-brand-dark">
             <img src="fondo-unmsm.png" alt="Campus UNMSM" class="w-full h-full object-cover opacity-90">
@@ -456,6 +477,7 @@
                 </div>
 
             </div>
+        </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 pb-24" id="cronograma">
@@ -483,10 +505,123 @@
                             Sistemas robóticos, ciberseguridad y despliegue en tiempo real. Los proyectos de ANEIMERA no
                             te los contamos, los demostramos.
                         </p>
-                        <div class="border-t border-gray-100 pt-6">
-                            <h3 class="text-xs font-bold text-brand-dark uppercase mb-4">Proporción de Actividades</h3>
-                            <div class="chart-container">
-                                <canvas id="compositionChart"></canvas>
+                        <div class="border-t border-gray-100 pt-8">
+                            <!-- Premium Social Hub: CONEIMERA UCAYALI 2026 -->
+                            <div class="social-hub-card p-6 rounded-3xl text-white overflow-hidden relative group">
+                                <!-- Subtle Jungle Accents -->
+                                <div
+                                    class="absolute top-0 right-0 w-32 h-32 bg-emerald-400/10 blur-3xl rounded-full translate-x-12 -translate-y-12">
+                                </div>
+                                <div
+                                    class="absolute bottom-0 left-0 w-24 h-24 bg-emerald-500/10 blur-2xl rounded-full -translate-x-8 translate-y-8">
+                                </div>
+
+                                <!-- Profile Header -->
+                                <div class="relative z-10 flex flex-col items-center text-center mb-8">
+                                    <div class="relative mb-4">
+                                        <div
+                                            class="w-16 h-16 rounded-2xl bg-white p-1.5 shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                                            <img src="logo-coneimera.png" class="w-full h-full object-contain"
+                                                alt="UCAYALI 2026">
+                                        </div>
+                                        <div
+                                            class="absolute -bottom-1 -right-1 bg-brand-oro text-[8px] font-black px-1.5 py-0.5 rounded-full text-black shadow-lg">
+                                            OFFICIAL</div>
+                                    </div>
+
+                                    <h3 class="text-base font-black tracking-tighter uppercase mb-1">CONEIMERA UCAYALI
+                                    </h3>
+                                    <div
+                                        class="flex items-center gap-2 text-emerald-200 text-[9px] font-bold uppercase tracking-widest">
+                                        <span>@coneimera.ucayali2026</span>
+                                        <span class="w-1 h-1 bg-emerald-400 rounded-full"></span>
+                                        <span class="text-white">905 Seguidores</span>
+                                    </div>
+                                </div>
+
+                                <!-- Quick Access Buttons (3 high-impact CTAs) -->
+                                <div class="relative z-10 space-y-2.5 mb-6">
+                                    <!-- Primary Registration -->
+                                    <a href="https://coneimera.com/promociones" target="_blank"
+                                        class="social-btn flex items-center justify-center gap-3 p-4 rounded-2xl text-center bg-white/15 border-white/30 hover:bg-white/25">
+                                        <span class="text-xl">📝</span>
+                                        <span class="text-[10px] font-black uppercase tracking-[0.15em]">Inscríbete al
+                                            CONEIMERA</span>
+                                    </a>
+
+                                    <!-- Secondary Contests row -->
+                                    <div class="grid grid-cols-2 gap-2.5">
+                                        <a href="https://www.instagram.com/coneimera.ucayali2026" target="_blank"
+                                            class="social-btn flex flex-col items-center justify-center p-3 rounded-2xl text-center">
+                                            <span class="text-lg mb-1">📄</span>
+                                            <span
+                                                class="text-[8px] font-black uppercase tracking-widest leading-none">Interesados
+                                                en Concursos</span>
+                                        </a>
+                                        <a href="https://drive.google.com/drive/u/2/folders/18BbHP7c8WzmZr1kniqCd5ocUax_rIbTU"
+                                            target="_blank"
+                                            class="social-btn flex flex-col items-center justify-center p-3 rounded-2xl text-center border-emerald-400/20">
+                                            <span class="text-lg mb-1">🏆</span>
+                                            <span
+                                                class="text-[8px] font-black uppercase tracking-widest leading-none">Bases
+                                                de
+                                                los Concursos</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Dual Main CTAs -->
+                                <div class="relative z-10 space-y-3">
+                                    <a href="https://www.instagram.com/coneimera.ucayali2026" target="_blank"
+                                        class="block w-full bg-white text-emerald-900 font-black py-3.5 rounded-2xl text-center text-[10px] uppercase tracking-[0.2em] shadow-xl hover:bg-emerald-50 transition-all active:scale-95 social-glow">
+                                        Seguir en Instagram
+                                    </a>
+                                    <a href="https://whatsapp.com/channel/0029Vb87yYSIXnloqIWBo60D" target="_blank"
+                                        class="block w-full bg-[#25D366] text-white font-black py-3.5 rounded-2xl text-center text-[10px] uppercase tracking-[0.2em] shadow-lg hover:brightness-110 transition-all active:scale-95 flex items-center justify-center gap-2">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.402 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.987-.51-5.742-1.47l-6.154 1.689zm5.978-4.977c1.558.928 3.391 1.417 5.259 1.417 5.535 0 10.041-4.505 10.041-10.041 0-2.68-1.045-5.199-2.941-7.097-1.896-1.897-4.418-2.944-7.098-2.944-5.535 0-10.042 4.505-10.042 10.041 0 1.83.498 3.623 1.441 5.204l-1.018 3.715 3.859-1.036zm11.455-2.855c-.3-.149-1.774-.875-2.048-.976-.275-.1-.475-.149-.675.15s-.774.976-.949 1.176c-.175.199-.349.225-.65.075-.3-.149-1.264-.466-2.408-1.486-.889-.793-1.489-1.773-1.664-2.071-.175-.299-.019-.461.13-.61.135-.134.3-.349.45-.524.148-.175.199-.299.299-.499.1-.199.05-.374-.025-.524-.075-.15-.675-1.625-.925-2.225-.244-.582-.51-.502-.675-.512-.175-.01-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.026-1.05 2.5 0 1.475 1.075 2.9 1.225 3.1.15.199 2.113 3.227 5.12 4.526.714.309 1.272.493 1.706.632.716.228 1.369.196 1.884.119.573-.085 1.774-.725 2.024-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.199-.575-.349z" />
+                                        </svg>
+                                        Grupo de WhatsApp
+                                    </a>
+                                </div>
+
+                                <!-- Date Footer -->
+                                <div
+                                    class="relative z-10 mt-6 pt-5 border-t border-white/10 flex justify-between items-center text-[8px] font-bold uppercase tracking-widest text-emerald-300">
+                                    <span>Pucallpa, Perú</span>
+                                    <span>10 - 15 Agosto</span>
+                                </div>
+                            </div>
+
+                            <!-- Destination Link with Jungle vibe -->
+                            <div class="mt-8 p-5 bg-emerald-50 rounded-2xl border border-emerald-100 flex items-center gap-4 transition-all hover:shadow-2xl hover:-translate-y-2 cursor-pointer relative overflow-hidden group"
+                                onclick="window.open('https://coneimera.com', '_blank')">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-emerald-100/0 via-white/50 to-emerald-100/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+                                </div>
+                                <div
+                                    class="w-14 h-14 flex-shrink-0 bg-white rounded-xl p-1.5 border border-emerald-200 shadow-sm relative z-10">
+                                    <img src="logo-coneimera.png" class="w-full h-full object-contain" alt="CONEIMERA">
+                                </div>
+                                <div class="relative z-10">
+                                    <h4 class="text-[10px] font-black text-emerald-700 uppercase tracking-[0.2em] mb-1">
+                                        Tu Próximo Destino</h4>
+                                    <p class="text-sm font-black text-emerald-900 leading-tight">Ucayali: Rumbo a la
+                                        Selva</p>
+                                    <div class="flex items-center gap-1.5 mt-2">
+                                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                        <span class="text-[8px] font-bold text-emerald-600 uppercase">FIEE UNMSM Rumbo
+                                            al Norte</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="ml-auto bg-white p-2 rounded-lg border border-emerald-100 shadow-sm relative z-10 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1206,30 +1341,9 @@
             });
         }
 
-        // Gráfico con colores ANEIMERA e institucionales
-        function initChart() {
-            const ctx = document.getElementById('compositionChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['IEEE', 'Masterclass', 'Agrupaciones'],
-                    datasets: [{
-                        // Actual data: 5 IEEE, 6 Masterclasses, 4 Agrupaciones
-                        data: [5, 6, 4],
-                        backgroundColor: ['#2563EB', '#C49A45', '#111827'],
-                        borderWidth: 0,
-                        hoverOffset: 10
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10, weight: 'bold', family: "'Inter', sans-serif" } } }
-                    },
-                    cutout: '75%'
-                }
-            });
+        // Sistema de Instagram Social Hub
+        function initSocialHub() {
+            console.log("Portal Social CONEIMERA Iniciado");
         }
 
         // Sistema de Filtrado
@@ -1355,7 +1469,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             render();
-            initChart();
+            initSocialHub();
             startCountdown();
             document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         });
